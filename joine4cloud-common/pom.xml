@@ -14,4 +14,8 @@
     <packaging>pom</packaging>
     <description>joine4cloud 公共聚合模块</description>
 
+    <modules>
+        <module>joine4cloud-common-security</module>
+    </modules>
+
 </project>
