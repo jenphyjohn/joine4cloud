@@ -33,6 +33,7 @@
         <module>joine4cloud-register</module>
         <module>joine4cloud-gateway</module>
         <module>joine4cloud-common</module>
+        <module>joine4cloud-auth</module>
     </modules>
 
     <dependencyManagement>
