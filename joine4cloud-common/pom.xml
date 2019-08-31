@@ -14,6 +14,13 @@
     <packaging>pom</packaging>
     <description>joine4cloud 公共聚合模块</description>
 
+    <developers>
+        <developer>
+            <name>JenphyJohn</name>
+            <email>zhuangzf1989@126.com</email>
+        </developer>
+    </developers>
+
     <modules>
         <module>joine4cloud-common-security</module>
     </modules>

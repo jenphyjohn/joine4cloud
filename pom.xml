@@ -8,6 +8,7 @@
     <version>1.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
+
     <developers>
         <developer>
             <name>JenphyJohn</name>
@@ -16,20 +17,18 @@
     </developers>
 
     <properties>
-        <!-- Environment Settings -->
+        <!-- Environment -->
         <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- Spring Settings -->
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+        <!-- Spring -->
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <!-- Maven Settings -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <modules>
+        <module>joine4cloud-dependencies</module>
         <module>joine4cloud-register</module>
         <module>joine4cloud-gateway</module>
         <module>joine4cloud-common</module>
@@ -38,27 +37,20 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--Spring Cloud-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--Spring Cloud Alibaba-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--Springboot-->
+            <!-- SpringBoot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- joine4cloud-dependencies -->
+            <dependency>
+                <groupId>com.github.joine4cloud</groupId>
+                <artifactId>joine4cloud-dependencies</artifactId>
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -104,11 +96,50 @@
     </build>
 
     <repositories>
-        <!--阿里云私服-->
         <repository>
             <id>aliyun</id>
             <name>aliyun</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
         </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
